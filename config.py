@@ -1,0 +1,3 @@
+MODEL_NAME = "gemini-3.5-flash"
+
+TEMPERATURE = 0
