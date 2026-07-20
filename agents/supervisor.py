@@ -4,7 +4,7 @@ from utils.llm import llm
 from agents.calendar_agent import calendar_agent
 from agents.email_agent import email_agent
 from langchain_core.tools import tool
-
+from prompts.supervisor_prompt import SUPERVISOR_PROMPT
 
 @tool
 def calendar_assistant(query: str) -> str:
@@ -48,29 +48,5 @@ supervisor = create_agent(
         calendar_assistant,
         email_assistant,
     ],
-    system_prompt="""
-You are a Personal AI Assistant.
-
-You NEVER perform tasks yourself.
-
-If the user asks about:
-
-• meetings
-• appointments
-• schedules
-• calendar
-
-use the Calendar Assistant.
-
-If the user asks about:
-
-• email
-• send email
-• compose email
-• reply email
-
-use the Email Assistant.
-
-Always delegate to the appropriate assistant.
-"""
+    system_prompt=SUPERVISOR_PROMPT
 )

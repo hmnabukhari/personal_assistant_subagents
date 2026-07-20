@@ -1,19 +1,31 @@
 from agents.supervisor import supervisor
 
-response = supervisor.invoke(
-    {
-        "messages": [
-            {
-                "role": "user",
-                "content": "Schedule a meeting with Sarah on Friday at 2 PM."
-            }
-        ]
-    }
-)
+print("🤖 Personal Assistant")
+print("Type 'exit' to quit.\n")
 
-last_message = response["messages"][-1]
+while True:
 
-if isinstance(last_message.content, list):
-    print(last_message.content[0]["text"])
-else:
-    print(last_message.content)
+    user_input = input("You: ")
+
+    if user_input.lower() == "exit":
+        break
+
+    response = supervisor.invoke(
+        {
+            "messages": [
+                {
+                    "role": "user",
+                    "content": user_input,
+                }
+            ]
+        }
+    )
+
+    last_message = response["messages"][-1]
+
+    if isinstance(last_message.content, list):
+        print("\nAssistant:", last_message.content[0]["text"])
+    else:
+        print("\nAssistant:", last_message.content)
+
+    print()
