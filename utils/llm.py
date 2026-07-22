@@ -1,11 +1,16 @@
+import os
 from dotenv import load_dotenv
-from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_openai import ChatOpenAI
 from config import MODEL_NAME, TEMPERATURE
-# Load variables from .env
+
 load_dotenv()
 
-# Create the LLM
-llm = ChatGoogleGenerativeAI(
+llm = ChatOpenAI(
     model=MODEL_NAME,
-    temperature=TEMPERATURE
+    temperature=TEMPERATURE,
+    api_key=os.getenv("OPENROUTER_API_KEY"),
+    base_url="https://openrouter.ai/api/v1",
+     max_tokens=1000, 
 )
+print("LLM:", llm)
+print("max_tokens:", llm.max_tokens)

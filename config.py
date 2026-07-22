@@ -1,3 +1,2 @@
-MODEL_NAME=MODEL_NAME = MODEL_NAME = "gemini-3.5-flash"
-
+MODEL_NAME =  "openai/gpt-4o-mini"
 TEMPERATURE = 0

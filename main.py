@@ -29,10 +29,9 @@ while True:
     # Save the assistant's reply
     messages.append(assistant_message)
 
-    # Print the reply
     if isinstance(assistant_message.content, list):
-        print("\nAssistant:", assistant_message.content[0]["text"])
+     for item in assistant_message.content:
+        if item.get("type") == "text":
+            print("\nAssistant:", item["text"])
     else:
-        print("\nAssistant:", assistant_message.content)
-
-    print()
+     print("\nAssistant:", assistant_message.content)
