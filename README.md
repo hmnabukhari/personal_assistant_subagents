@@ -176,35 +176,6 @@ Create an event for Project Review on Friday at 2 PM.
 
 ---
 
-## 📌 Future Enhancements
-
-- Read Gmail inbox
-- List Calendar events
-- AI Memory
-- Google Drive Integration
-- Voice Assistant
-- File Upload
-- Chat History
-- Dark Mode
-- Streaming Responses
-- Multi-user Authentication
-
----
-
-## 📷 Screenshots
-
-Add screenshots of your application here.
-
-Example:
-
-```
-screenshots/
-├── home.png
-├── gmail.png
-└── calendar.png
-```
-
----
 
 ## 🤝 Contributing
 
